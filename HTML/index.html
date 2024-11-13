@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Light background */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fb0404;
+            margin-top: 20px;
+        }
+
+        #products, #cart {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #09e63d;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #fa0101;
+            margin-bottom: 15px;
+        }
+
+        #products p, #cart ul {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #2f08b9;
+        }
+
+        button {
+            background-color: #050700; /* Green button */
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c83e98;
+        }
+
+        #cartItems li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #cartItems li:last-child {
+            border-bottom: none;
+        }
+
+        #cartItems li button {
+            background-color: #040500; /* Red button for removing items */
+        }
+
+        #cartItems li button:hover {
+            background-color: #c51d7c;
+        }
+
+        #cartTotal, #cartItemCount {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2905ac;
+            margin-top: 10px;
+        }
+
+        #cart button {
+            background-color: #000000; /* Yellow button for clearing cart */
+        }
+
+        #cart button:hover {
+            background-color: #fa18af;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+
+    <!-- Products Section -->
+    <div id="products">
+        <h2>Products</h2>
+        <p>Product 1 - 20€ <button onclick="addToCart(1, 'Product 1', 20)">Add to Cart</button></p>
+        <p>Product 2 - 15€ <button onclick="addToCart(2, 'Product 2', 15)">Add to Cart</button></p>
+    </div>
+
+    <!-- Cart Section -->
+    <div id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cartItems"></ul>
+        <p id="cartTotal">Total: 0€</p>
+        <p id="cartItemCount">Total Items: 0</p>
+        <button onclick="clearCart()">Empty Cart</button>
+    </div>
+
+    <script src="script.js"></script> <!-- Linking the JavaScript file -->
+</body>
+</html>
